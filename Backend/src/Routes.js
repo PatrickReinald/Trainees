@@ -17,9 +17,7 @@ routes.put('/update/:id', jwtController.validateToken, stageController.update);
 
 routes.delete('/delete/:id', jwtController.validateToken, stageController.del);
 
-routes.post('/admin', adminController.regist);
-
-routes.post('/admin/auth', adminController.auth);
+routes.post('/admin', adminController.auth);
 
 
 module.exports = routes;
