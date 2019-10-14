@@ -3,11 +3,7 @@ const Stage = require('../models/Stage');
 async function index(req, res){
     var stages;
 
-    if(req.query){
-        stages = await Stage.find(req.query).select('title createdAt').sort('-createdAt');
-    } else {
-        stages = await Stage.find().select('title createdAt').sort('-createdAt');
-    }
+    stages = await Stage.find(req.query).select('_id title course createdAt descrip').sort('-createdAt');
 
     return res.json(stages);
 };
@@ -19,12 +15,12 @@ async function find(req, res){
 }
 
 async function insert(req, res){
-    const {title, descrip, date} = req.body;
+    const {title, descrip, course} = req.body;
 
     const stage = await Stage.create({
         title,
         descrip,
-        date
+        course
     });
 
     return res.json({Message : "Sucess", Content : stage});
