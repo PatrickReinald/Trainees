@@ -3,7 +3,7 @@ const Stage = require('../models/Stage');
 async function index(req, res){
     var stages;
 
-    stages = await Stage.find(req.query).select('_id title course createdAt descrip').sort('-createdAt');
+    stages = await Stage.find(req.query).select('_id title course createdAt').sort('-createdAt');
 
     return res.json(stages);
 };
