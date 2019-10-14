@@ -19,6 +19,6 @@ app.use(morgan("dev"))
 
 app.use(require('./Routes'));
 
-app.listen(port);
+app.listen(process.env.PORT || port);
 
 console.log("Server listening on port " + port);
