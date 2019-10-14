@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Com Node
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h1 text-center>Exemplo de registro de estágio</h1>
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Título</ion-label>
+      <ion-input type="text" name="title" [(ngModel)]="model.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Descrição</ion-label>
+      <ion-input type="text" name="descrip" [(ngModel)]="model.descrip"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Curso</ion-label>
+      <ion-input type="text" name="course" [(ngModel)]="model.course"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (click)="regist()" color="primary">Registrar Estágio</button>
+
+</ion-content>
