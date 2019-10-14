@@ -3,18 +3,12 @@ import { NavController, NavParams, ToastController } from '@ionic/angular';
 import { StagesService } from "../../services/stages.service";
 
 @Component({
-  selector: 'app-page-regist',
-  templateUrl: './regist.page.html',
-  styleUrls: ['./regist.page.scss'],
+  selector: 'app-regist',
+  templateUrl: 'regist.page.html',
+  styleUrls: ['regist.page.scss'],
 })
 
-export class Stage {
-  title: string;
-  descrip: string;
-  course: string;
-};
-
-export class RegistPage implements OnInit {
+export class RegistPage {
   model: Stage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
@@ -33,13 +27,16 @@ export class RegistPage implements OnInit {
  
       })
       .catch((err: any) => {
-        this.toast.create({ message: 'Deu ruim: ' + err.error, position: 'bottom', duration: 3000 });
+        this.toast.create({ message: 'Deu ruim: ' + err.message, position: 'bottom', duration: 3000 });
       })
     }
-    
-  ngOnInit() {
-  }
 
+};
+
+export class Stage {
+  title: string;
+  descrip: string;
+  course: string;
 };
 
 

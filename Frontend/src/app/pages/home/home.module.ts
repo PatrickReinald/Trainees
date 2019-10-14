@@ -14,10 +14,12 @@ import { HomePage } from './home.page';
     RouterModule.forChild([
       {
         path: '',
+        loadChildren: '.home.module#HomePageModule',
         component: HomePage
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  exports: [RouterModule]
 })
 export class HomePageModule {}
