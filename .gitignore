@@ -24,6 +24,7 @@ npm-debug.log*
 /.versions
 /.vscode
 /node_modules
+/yarn.lock
 /coverage
 /dist
 /platforms
